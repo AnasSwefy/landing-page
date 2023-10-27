@@ -1,0 +1,44 @@
+let menu = document.querySelectorAll("li")[0];
+let menu2 = document.querySelectorAll("li")[1];
+let menu3 = document.querySelectorAll("li")[2];
+let menu4 = document.querySelectorAll("li")[3];
+let menu5 = document.querySelectorAll("li")[4];
+let menu6 = document.querySelectorAll("li")[5];
+let side = document.querySelector(".side");
+let head = document.querySelector(".side h2");
+let ul = document.querySelector("ul");
+
+ul.onclick = function displayMenu() {
+  side.style.height = "60%";
+  side.style.backgrounColor = "#f44336";
+  ul.style.marginTop = "-200px";
+  head.style.marginTop = "-400px";
+  let span = document.createElement("span");
+  span.style.backgroundColor = "white";
+  span.style.width = "50px";
+  span.style.height = "fit-content";
+  span.style.cursor = "pointer";
+  span.style.position = "absolute";
+  span.style.color = "black";
+  menu.style.display = "block";
+  menu2.style.display = "block";
+  menu3.style.display = "block";
+  menu4.style.display = "block";
+  menu5.style.display = "block";
+  menu6.style.display = "block";
+  let text = document.createTextNode("Close menu");
+  span.appendChild(text);
+  side.appendChild(span);
+  span.onclick = function closeMenu() {
+    side.style.height = "20px";
+    ul.style.top = "100px";
+    head.style.marginTop = "0px";
+    span.style.display = "none";
+    menu.style.display = "none";
+    menu2.style.display = "none";
+    menu3.style.display = "none";
+    menu4.style.display = "none";
+    menu5.style.display = "none";
+    menu6.style.display = "none";
+  };
+};

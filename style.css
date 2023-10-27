@@ -1,0 +1,256 @@
+/* Start Global Rules */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+:root {
+  --orange: #f44336;
+  --gray: rgb(151, 151, 151);
+  --white: white;
+}
+/* End Global Rules */
+
+.page {
+  display: grid;
+  grid-template-columns: 350px auto;
+}
+
+.side {
+  background-color: var(--orange);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+  color: var(--white);
+  padding: 50px;
+  margin-right: 100px;
+}
+
+.side ul {
+  margin-top: 200px;
+}
+
+.side ul li {
+  margin-top: 50px;
+  list-style: none;
+}
+
+.side ul li a {
+  text-decoration: none;
+  color: var(--white);
+  margin-top: 50px;
+  padding: 5px;
+}
+
+.side ul li a:hover {
+  background-color: black;
+  color: var(--white);
+  transition: 0.8s;
+  border-radius: 5px;
+}
+
+.cont {
+  max-width: 90%;
+}
+
+.cont h1 {
+  font-size: 50px;
+}
+
+.cont .head {
+  position: relative;
+}
+
+.cont .head h2 {
+  color: var(--orange);
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.cont .head span {
+  position: absolute;
+  background-color: var(--orange);
+  width: 50px;
+  height: 10px;
+  bottom: -10px;
+  border-radius: 15px;
+}
+
+.cont .image {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.cont img {
+  width: 100%;
+}
+
+p {
+  font-size: 14px;
+  line-height: 2;
+  margin-bottom: 30px;
+}
+
+.card {
+  text-align: center;
+}
+
+.card img {
+  width: 150px;
+  margin-bottom: 15px;
+}
+
+.cont .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 15px;
+}
+
+.cont .cards .card {
+  padding: 20px;
+  height: fit-content;
+  background-color: var(--gray);
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.cont .cards .card h2 {
+  margin-bottom: 5px;
+}
+
+.cont .cards .card h3 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.table {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 15px;
+  margin-bottom: 30px;
+}
+
+.table table {
+  text-align: center;
+  border-collapse: collapse;
+  background-color: var(--gray);
+  height: 300px;
+}
+
+.table table tr {
+  border-bottom: 2px solid var(--white);
+  background-color: var(--gray);
+  width: 100%;
+  height: 50px;
+}
+
+.table table tr td {
+  padding: 20px;
+}
+
+.bg-gray {
+  color: var(--white);
+  background-color: var(--gray);
+  height: 75px;
+}
+
+.bg-red {
+  color: var(--white);
+  background-color: var(--orange);
+  height: 75px;
+}
+
+button {
+  margin: 20px 0 10px 0;
+  padding: 10px;
+  border: none;
+  width: 75px;
+}
+
+.t-white {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+input {
+  width: 100%;
+  height: 40px;
+  outline: none;
+  padding-left: 20px;
+}
+
+input[type="submit"] {
+  background-color: var(--orange);
+  color: var(--white);
+  outline: none;
+  border: none;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 990px) {
+  .page {
+    grid-template-columns: 100%;
+  }
+  .side {
+    width: 100%;
+    height: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+  }
+  .side ul li {
+    display: none;
+  }
+  .side .nav {
+    width: 50px;
+    height: 5px;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+    top: -100px;
+    cursor: pointer;
+  }
+  .side .nav::before,
+  .side .nav::after {
+    content: "";
+    position: absolute;
+    background-color: white;
+    width: 50px;
+    height: 5px;
+    border-radius: 5px;
+  }
+  .side .nav::before {
+    top: -10px;
+  }
+  .side .nav::after {
+    bottom: -10px;
+  }
+  .cont {
+    margin: 150px auto;
+  }
+  .table {
+    grid-template-columns: auto;
+    row-gap: 10px;
+  }
+}
